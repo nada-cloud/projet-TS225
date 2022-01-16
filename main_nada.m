@@ -112,8 +112,8 @@ for k=B2_h(1,1):B2_h(2,1)
         %if res(1)>=x_i(1) && res(1)<=x_i(2) && res(2)clc>=y_i(1) && res(2)<=y_i(3)
         if res(1)>0 && res(2)>0 && res(1)<w_2 && res(2)<h_2 
             %disp('bla')
-            I2_h(round(1+res(2)),round(1+res(1)),:)=I2(j,i,:);
-            M2_h(round(1+res(2)),round(1+res(1)),:)=1;
+            I2_h(j,i,:)=I2(floor(res(2))+1,floor(res(1))+1,:); %
+            M2_h(j,i,:)=1;
         end
     end
 end
@@ -134,6 +134,7 @@ end
 
 figure, imshow(uint8(I2))
 figure, imshow(uint8(I2_h))
+figure, imshow(uint8(M2_h))
 
 
 
